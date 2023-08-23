@@ -5,6 +5,7 @@ import 'package:youtube_clone/app/screens/authentication/models/channel_model.da
 import 'package:youtube_clone/constants/app_colors.dart';
 import 'package:youtube_clone/constants/app_style.dart';
 
+import '../my_channel/my_channel_screen.dart';
 import 'controllers/blocs/channel/channel_bloc.dart';
 
 class ChannelWrapper extends StatefulWidget {
@@ -41,13 +42,11 @@ class _ChannelWrapperState extends State<ChannelWrapper> {
             )),
           );
         } else if (state is ChannelLoadedState) {
-          return const Scaffold(
-            body: SafeArea(
-              child: Center(
-                child: Text('My Channel'),
-              ),
-            ),
-          );
+          return state.channelModel != null
+              ? MyChannelScreen(
+                  channelModel: state.channelModel,
+                )
+              : const ChannelCreateScreen();
         }
         return const ChannelCreateScreen();
       },

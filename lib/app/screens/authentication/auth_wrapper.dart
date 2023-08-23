@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:youtube_clone/app/screens/profile/profile_page.dart';
 import 'package:youtube_clone/constants/app_colors.dart';
 import 'package:youtube_clone/constants/app_style.dart';
-import '../../pages/common/widgets/liner.dart';
-import '../../pages/common/widgets/same_part.dart';
+import '../../common/widgets/liner.dart';
+import '../../common/widgets/same_part.dart';
 
 import 'controllers/blocs/authentication/authentication_bloc.dart';
 import 'widgets/add_account.dart';

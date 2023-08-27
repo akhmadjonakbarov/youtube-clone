@@ -2,15 +2,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:youtube_clone/app/pages/common/widgets/liner.dart';
-import 'package:youtube_clone/app/pages/common/widgets/same_part.dart';
+import 'package:youtube_clone/app/common/widgets/same_part.dart';
 import 'package:youtube_clone/app/screens/authentication/widgets/custom_tile.dart';
 import 'package:youtube_clone/app/screens/channel/channel_wrapper.dart';
 import 'package:youtube_clone/app/screens/profile/widgets/profile_info.dart';
 import 'package:youtube_clone/constants/app_style.dart';
 
-import '../channel/controllers/blocs/channel/channel_bloc.dart';
-
+import '../../common/controllers/blocs/channel/channel_bloc.dart';
+import '../../common/widgets/liner.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

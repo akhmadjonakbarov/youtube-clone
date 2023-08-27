@@ -5,8 +5,8 @@ import 'package:youtube_clone/app/screens/authentication/models/channel_model.da
 import 'package:youtube_clone/constants/app_colors.dart';
 import 'package:youtube_clone/constants/app_style.dart';
 
+import '../../common/controllers/blocs/channel/channel_bloc.dart';
 import '../my_channel/my_channel_screen.dart';
-import 'controllers/blocs/channel/channel_bloc.dart';
 
 class ChannelWrapper extends StatefulWidget {
   const ChannelWrapper({super.key});
@@ -41,9 +41,9 @@ class _ChannelWrapperState extends State<ChannelWrapper> {
               child: CircularProgressIndicator(),
             )),
           );
-        } else if (state is ChannelLoadedState) {
+        } else if (state is SingleChannelLoadedState) {
           return state.channelModel != null
-              ? MyChannelScreen(
+              ? MyChannelBlocWrapper(
                   channelModel: state.channelModel,
                 )
               : const ChannelCreateScreen();
@@ -74,7 +74,9 @@ class _ChannelCreateScreenState extends State<ChannelCreateScreen> {
               channelModel: ChannelModel(
                 id: UniqueKey().toString(),
                 uid: "",
+                userUid: auth.currentUser!.uid,
                 name: _editingController.text,
+                videos: [],
               ),
             ),
           );
@@ -138,8 +140,7 @@ class _ChannelCreateScreenState extends State<ChannelCreateScreen> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 5, horizontal: 5),
+                            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                             child: CircleAvatar(
                               radius: MediaQuery.sizeOf(context).width * 0.07,
                               child: const Icon(

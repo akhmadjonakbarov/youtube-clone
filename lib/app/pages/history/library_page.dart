@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_clone/app/pages/common/widgets/header.dart';
+import 'package:youtube_clone/app/common/widgets/header.dart';
 import 'widgets/history_part.dart';
 
 class LibraryPage extends StatelessWidget {

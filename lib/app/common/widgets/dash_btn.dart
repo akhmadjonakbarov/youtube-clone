@@ -2,8 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DashBTN extends StatelessWidget {
-  bool isHomePage;
-  DashBTN({super.key, this.isHomePage = false});
+  String page;
+
+  DashBTN({super.key, required this.page});
+
+  Widget? adaptiveSheet;
 
   @override
   Widget build(BuildContext context) {
@@ -16,29 +19,45 @@ class DashBTN extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         onTap: () => showBottomSheet(
           backgroundColor: Colors.transparent,
-          // shape: const RoundedRectangleBorder(
-          //   borderRadius: BorderRadius.vertical(
-          //     top: Radius.circular(20),
-          //   ),
-          // ),
           context: context,
-          builder: (context) => isHomePage
-              ? Container(
+          builder: (context) {
+            switch (page) {
+              case 'homepage':
+                adaptiveSheet = Container(
+                  width: double.infinity,
                   margin: const EdgeInsets.all(10),
                   height: 300,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
                   ),
-                )
-              : Container(
+                );
+                break;
+              case 'videotab':
+                adaptiveSheet = Container(  width: double.infinity,
                   margin: const EdgeInsets.all(10),
                   height: 300,
                   decoration: BoxDecoration(
-                    color: Colors.red,
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
                   ),
-                ),
+                  child: Text(page),
+                );
+                break;
+              default:
+                adaptiveSheet = Container(  width: double.infinity,
+                  margin: const EdgeInsets.all(10),
+                  height: 300,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Text('Bunday screen mavjud emas!'),
+                );
+                break;
+            }
+            return adaptiveSheet!;
+          },
         ),
         child: const Icon(
           CupertinoIcons.ellipsis_vertical,

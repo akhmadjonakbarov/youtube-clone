@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'channel_bloc.dart';
 
 @immutable
@@ -8,9 +9,16 @@ class ChannelInitial extends ChannelState {}
 class ChannelLoadingState extends ChannelState {}
 
 class ChannelLoadedState extends ChannelState {
-  final ChannelModel channelModel;
+  List<ChannelModel> channels;
 
-  ChannelLoadedState({required this.channelModel});
+  ChannelLoadedState({required this.channels});
+}
+
+class SingleChannelLoadedState extends ChannelState {
+  ChannelModel channelModel;
+  SingleChannelLoadedState({
+    required this.channelModel,
+  });
 }
 
 class ChannelErrorState extends ChannelState {

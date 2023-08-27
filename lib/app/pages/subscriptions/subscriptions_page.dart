@@ -1,6 +1,6 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:youtube_clone/app/pages/common/widgets/header.dart';
+import 'package:youtube_clone/app/common/widgets/header.dart';
 import 'package:youtube_clone/app/utilities/random_image.dart';
 import 'package:youtube_clone/constants/app_colors.dart';
 import 'package:youtube_clone/constants/app_style.dart';

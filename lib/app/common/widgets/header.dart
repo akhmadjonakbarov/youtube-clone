@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/app/screens/authentication/auth_wrapper.dart';
 import 'package:youtube_clone/constants/app_style.dart';
-import '../../home/widgets/show_notification.dart';
+import '../../pages/home/widgets/show_notification.dart';
 
 class Header extends StatelessWidget {
   Header({

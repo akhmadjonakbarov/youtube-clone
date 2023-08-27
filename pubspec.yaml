@@ -43,6 +43,10 @@ dependencies:
   bloc:
   firebase_storage:
   flutter_bloc:
+  dio: ^5.3.2
+  file_picker: ^5.3.4
+  video_player: ^2.7.0
+  appinio_video_player: ^1.2.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_clone/app/pages/common/widgets/dash_btn.dart';
+import 'package:youtube_clone/app/common/widgets/dash_btn.dart';
 
 class HistoryTile extends StatelessWidget {
   const HistoryTile({
@@ -44,7 +44,9 @@ class HistoryTile extends StatelessWidget {
                         )
                       ],
                     ),
-                    DashBTN()
+                    DashBTN(
+                      page: 'history',
+                    )
                   ],
                 )
               ],

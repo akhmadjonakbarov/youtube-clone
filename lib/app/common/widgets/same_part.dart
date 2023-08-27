@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../constants/app_style.dart';
-import '../../../screens/authentication/widgets/custom_tile.dart';
+import '../../../constants/app_style.dart';
+import '../../screens/authentication/widgets/custom_tile.dart';
 import 'liner.dart';
 
 class SamePart extends StatelessWidget {
